@@ -1,0 +1,30 @@
+i {
+  font-size: large;
+  color: #555;
+}
+
+i:hover {
+  cursor: pointer;
+}
+#youtubeLogo {
+  color: red;
+  margin-left: 20px;
+}
+
+#menu {
+  margin-left: 10px;
+}
+
+#logoName {
+  font-size: x-large;
+}
+
+/* 화면작아지면 사라지게 하기 */
+#searchbox {
+  width: 40vw;
+  font-size: large;
+}
+
+.search > i {
+  margin: 0 10px
+}

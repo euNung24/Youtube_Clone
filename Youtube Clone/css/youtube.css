@@ -8,22 +8,26 @@ li {
   list-style: none;
 }
 
-header i {
-  font-size: x-large;
-}
-.container {
-  margin: 0 10px;
+a {
+  text-decoration: none;
 }
 
+label{
+  display: none;
+}
+
+/* header */
 header {
   display: flex;
-  margin: 5px 0;
-  background-color: aquamarine;
+  position: fixed;
+  width: 100%;
+  padding: 0 1%;
   justify-content: space-between;
 }
 
 header > div {
   align-self: center;
+  
 }
 
 header ul li {
@@ -31,15 +35,55 @@ header ul li {
   margin: 10px;
 }
 
-div > label {
-  display: none;
+
+/* content */
+.content {
+  padding-top: 50px;
+  display: flex;
+  height: 100vh;
 }
 
-.microphone {
-  border: 1px solid black;
+/* openSide */
+#openSide {
+  float: left;
 }
 
-#sidebar {
-  display: inline-flex;
-  background-color: cadetblue;
+#openSide > ul > li {
+  text-align: center;
+  padding: 10px;
+}
+#openSide > ul > li:hover{
+  background-color: rgb(114, 122, 124);
+}
+
+#openSide > ul > li > a {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* closeSide */
+#closeSide {
+  overflow-y: scroll;
+  float: left;
+  width: 220px;
+}
+
+#closeSide > ul > li {
+  padding: 10px;
+}
+
+#closeSide > ul > li > a > i{
+  margin-right: 15px;
+}
+
+#closeSide > ul > li:hover{
+  background-color: rgb(114, 122, 124);
+}
+
+#video {
+  clear: both;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
 }
