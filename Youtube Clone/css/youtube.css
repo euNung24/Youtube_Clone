@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+header i {
+  font-size: x-large;
+}
+.container {
+  margin: 0 10px;
+}
+
+header {
+  display: flex;
+  margin: 5px 0;
+  background-color: aquamarine;
+  justify-content: space-between;
+}
+
+header > div {
+  align-self: center;
+}
+
+header ul li {
+  display: inline-flex;
+  margin: 10px;
+}
+
+div > label {
+  display: none;
+}
+
+.microphone {
+  border: 1px solid black;
+}
+
+#sidebar {
+  display: inline-flex;
+  background-color: cadetblue;
+}
