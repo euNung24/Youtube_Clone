@@ -1,28 +1,49 @@
+:root {
+  --grey-light-color: #e0e0e0;
+
+  --bs-padding: 10px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
 i {
-  font-size: large;
-  color: #555;
-  padding: 5px;
-  align-self: center;
+  font-size: larger;
 }
 
 i:hover {
   cursor: pointer;
 }
+
 #youtubeLogo {
   color: red;
 }
 
-#logoName {
-  font-size: large;
+#search2 {
+  display: none;
 }
 
-/* 화면작아지면 사라지게 하기 */
-#searchbox {
-  width: 35vw;
-  font-size: large;
+@media screen and (max-width: 650px) {
+  #search {
+    display: none;
+  }
+  #search2 {
+    display: block;
+  }
 }
 
-#search > ul > li:first-child > i{
-  background-color: darkgray;
+#search > ul > li:nth-child(1)> i{
+  background-color: var(--grey-light-color);
   border: 1px solid #555;
+  padding: 5px 20px;
+}
+
+
+header > div ul li:active {
+  border-radius: 50%;
+  background-color: var(--grey-light-color);
 }

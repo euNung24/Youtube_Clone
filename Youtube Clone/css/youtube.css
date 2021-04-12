@@ -1,19 +1,27 @@
 :root {
   --grey-light-color: #e0e0e0;
+
+  --bs-padding: 10px;
 }
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-y: hidden;
 }
 
 li {
   list-style: none;
 }
 
+a:checked {
+  color: #000;
+}
+
 a {
   text-decoration: none;
+  color: #000;
 }
 
 label{
@@ -22,92 +30,93 @@ label{
 
 /* header */
 header {
-  display: flex;
   position: fixed;
+  display: flex;
   width: 100%;
-  padding: 10px;
   justify-content: space-between;
-}
-
-header > div {
-  align-self: center;
+  background-color: burlywood;
 }
 
 header ul li {
-  display: inline-flex;
-  padding: 0 5px;
+  display: inline-block;
 }
 
-
-/* content */
-.content {
-  padding-top: 50px;
-  display: flex;
-  height: 100vh;
-}
-
-/* openSide */
-#openSide {
+/* simpleSide */
+#simpleSide {
   float: left;
+  height: 100vh;
+  margin-top: 60px;
 }
 
-#openSide > ul > li {
+#simpleSide > ul > li {
   text-align: center;
   padding: 10px;
 }
-#openSide > ul > li:hover{
+
+#simpleSide > ul > li:hover{
   background-color: var(--grey-light-color);
 }
 
-#openSide > ul > li > a {
+#simpleSide > ul > li > a {
   width: 50px;
   display: flex;
   flex-direction: column;
 }
 
-/* closeSide */
-#closeSide {
-  overflow-y: scroll;
+/* wideSide */
+#wideSide {
+  overflow-y: hidden;
   float: left;
-  width: 220px;
+  height: 100vh;
+  margin-top: 60px;
+  min-width: 220px;
 }
 
-#closeSide > ul > li {
+#wideSide:hover {
+  overflow-y: scroll;
+}
+#wideSide > ul > li {
   padding: 10px 20px;
 }
 
-#closeSide > ul > li > a > i{
+#wideSide > ul > li > a > i{
   margin-right: 15px;
 }
 
-#closeSide > ul > li:hover{
+#wideSide > ul > li:hover{
   background-color: var(--grey-light-color);
   cursor: pointer;
 }
 
 #videos {
-  height: 100%;
-  width: 100%;
+  display: grid;
+  height: 100vh;
+  padding-top: 60px;
+  background-color: darkgoldenrod;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
   overflow-y: scroll;
 }
 
-#search2 {
-  display: none;
-}
-
-@media screen and (max-width: 650px) {
-  #search {
-    display: none;
-  }
-  #search2 {
-    display: block;
-  }
-
-  #openSide {
-    display: none;
-  }
-
-  #closeSide {
+@media screen and (min-width: 1320px) { 
+  #simpleSide {
     display: none;
   }
 }
+
+@media screen and (min-width: 800px) and (max-width: 1320px) {
+  #wideSide{
+    display: none
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #simpleSide {
+    display: none;
+  }
+  #wideSide{
+    display: none
+  }
+}
+
+
+
