@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+i, input {
+  font-size: large;
+}
+
+i {
+  padding: 10px;
+}
+
+.search > li:nth-of-type(2) > i {
+  padding: 2px 15px;
+  border: 1px solid #202020;
+  background-color: #e0e0e0;
+  border-radius: 0%;
+}
+
+header ul li i:hover {
+  cursor: pointer;
+}
+
+#simpleSide ul li:hover, #wideSide ul li:hover {
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+
+header ul li i:active {
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+
+header ul li:nth-of-type(2) a i {
+  color: red;
+}
+
+/* ---------------header--------------- */
+header {
+  background-color:white;
+  height: 50px;
+  width: 100%;
+  position: 0 0 fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+header ul {
+  display: flex;
+  line-height: 50px;
+}
+
+header > div ul li:active {
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+
+.login {
+  display: flex;
+}
+
+/* ---------------simpleSide--------------- */
+#simpleSide {
+  background-color: white;
+  float: left;
+  height: 100vh;
+  padding: 0 10px;
+}
+
+#simpleSide ul li a {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* ---------------wideSide--------------- */
+#wideSide {
+  background-color: white;
+  float: left;
+  min-width: 200px;
+  height: 100vh;
+  margin-left: 15px;
+  overflow-y: hidden;
+}
+
+#wideSide:hover {
+  overflow-y: scroll;
+}
+
+#wideSide i {
+  padding-right: 10px;
+}
+
+/* ---------------contents---------------*/
+
+.contents {
+  background-color: darkcyan;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.contents > div {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 1320px) { 
+  #simpleSide {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1320px) {
+  #wideSide {
+    display: none
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #simpleSide {
+    display: none;
+  }
+  #wideSide {
+    display: none
+  }
+}
+
+input {
+  min-width: 40vw;
+}
+
+#login {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
