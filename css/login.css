@@ -1,0 +1,33 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+}
+
+form {
+  background-color: cadetblue;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+form div button {
+  background-color: mediumpurple;
+  margin: 10px;
+}
