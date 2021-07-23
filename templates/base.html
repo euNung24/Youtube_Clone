@@ -16,21 +16,18 @@
     <header>
       <ul>
         <li>
-          <i class="fas fa-bars fs-4" id="menu" role="button"></i>
+          <button><i class="fas fa-bars fs-4" id="menu" role="button"></i></button>
         </li>
-        <li>
-          <a href=""><i class="fab fa-youtube"></i></a>
-        </li>
-        <li>
-          YouTube
+        <li class="logo">
+          <a href=""><i class="fab fa-youtube withText"></i><span>YouTube</span><sup>KR</sup></a>
         </li>
       </ul>
       <ul class="search">
         <li>
           <input type="search" placeholder="검색">
+          <button><i class="fas fa-search" title="검색"></i></button>
         </li>
         <li>
-          <button><i class="fas fa-search" title="검색"></i></button>
         </li>
         <li>
           <button><i class="fas fa-microphone text-secondary" title="음성으로 검색"></i></button>
@@ -45,9 +42,9 @@
         </li>
         <li>
           {% if user.is_authenticated %}
-          <a href="{% url 'common:logout' %}"><img src="{% static '1.PNG' %}" alt="" id="login">로그아웃</a>
+          <a href="{% url 'common:logout' %}"><img src="{% static '1.PNG' %}" alt="" id="login"><span>로그아웃</span></a>
           {% else %}
-          <a href="{% url 'common:login' %}"><i class="fas fa-user-circle fs-4"></i>로그인</a>
+          <a href="{% url 'common:login' %}"><i class="fas fa-user-circle fs-4"></i><span>로그인</span></a>
           {% endif %}
         </li>
       </ul>
@@ -55,10 +52,10 @@
 
     <div id="simpleSide">
       <ul>
-        <li><a href="{% url 'base:explore' %}"><i class="fas fa-home"></i>홈</a></li>
-        <li><a href=""><i class="fas fa-compass"></i>탐색</a></li>
-        <li><a href=""><i class="fas fa-archive"></i>구독</a></li>
-        <li><a href=""><i class="fas fa-archive"></i>보관함</a></li>
+        <li><a href="{% url 'video:storageBox' %}"><i class="fas fa-home"></i><span>홈</span></a></li>
+        <li><a href=""><i class="fas fa-compass"></i><span>탐색</span></a></li>
+        <li><a href=""><i class="fas fa-archive"></i><span>구독</span></a></li>
+        <li><a href="{% url 'base:explore' %}"><i class="fas fa-archive"></i><span>보관함</span></a></li>
       </ul>
     </div>
 
@@ -66,61 +63,59 @@
       <ul>
         <ul>
           <li class="home">
-            <a href="{% url 'base:home' %}"><i class="fas fa-home"></i>홈</a>
+            <a href="{% url 'video:storageBox' %}"><i class="fas fa-home"></i><span>홈</span></a>
           </li>
           <li>
-            <a href="{% url 'base:explore' %}"><i class="fas fa-compass"></i>탐색</a>
+            <a href="{% url 'base:explore' %}"><i class="fas fa-compass"></i><span>탐색</span></a>
           </li>
           <li>
-            <a href=""><i class="fas fa-archive"></i>구독</a>
+            <a href=""><i class="fas fa-archive"></i><span>구독</span></a>
           </li>
         </ul>
         <hr/>
         <ul>
           <li>
-            <a href="{% url 'video:storageBox' %}"><i class="fas fa-archive"></i>보관함</a>
+            <a href=""><i class="fas fa-archive"></i><span>보관함</span></a>
           </li>
           <li>
-            <a href="{% url 'video:list' %}" ><i class="far fa-clock"></i>시청 기록</a>
+            <a href="{% url 'video:list' %}" ><i class="far fa-clock"></i><span>시청 기록</span></a>
           </li>
           <li>
-            <a href="" ><i class="far fa-play-circle"></i>내 동영상</a>
+            <a href="" ><i class="far fa-play-circle"></i><span>내 동영상</span></a>
           </li>
           <li>
-            <a href="" ><i class="fas fa-clock"></i>나중에 볼 동영상</a>
+            <a href="" ><i class="fas fa-clock"></i><span>나중에 볼 동영상</span></a>
           </li>
           <li>
-            <a href="" ><i class="fas fa-chevron-down"></i>더 보기</a>
+            <a href="" ><i class="fas fa-chevron-down"></i><span>더 보기</span></a>
           </li>
         </ul>
         <hr/>
+        <p>구독</p>
         <ul>
-          <li >
-            구독
+          <li>
+            <a href="" ><i class="fas fa-circle"></i><span>구독 1</span></a>
           </li>
           <li>
-            <a href="" ><i class="fas fa-circle"></i>구독 1</a>
+            <a href="" ><i class="fas fa-circle"></i><span>구독 2</span></a>
           </li>
           <li>
-            <a href="" ><i class="fas fa-circle"></i>구독 2</a>
+            <a href="" ><i class="fas fa-circle"></i><span>구독 3</span></a>
           </li>
           <li>
-            <a href="" ><i class="fas fa-circle"></i>구독 3</a>
+            <a href="" ><i class="fas fa-circle"></i><span>구독 4</span></a>
           </li>
           <li>
-            <a href="" ><i class="fas fa-circle"></i>구독 4</a>
+            <a href="" ><i class="fas fa-circle"></i><span>구독 5</span></a>
           </li>
           <li>
-            <a href="" ><i class="fas fa-circle"></i>구독 5</a>
+            <a href="" ><i class="fas fa-circle"></i><span>구독 6</span></a>
           </li>
           <li>
-            <a href="" ><i class="fas fa-circle"></i>구독 6</a>
+            <a href="" ><i class="fas fa-circle"></i><span>구독 7</span></a>
           </li>
           <li>
-            <a href="" ><i class="fas fa-circle"></i>구독 7</a>
-          </li>
-          <li>
-            <a href="" ><i class="fas fa-chevron-down"></i>n개 더 보기</a>
+            <a href="" ><i class="fas fa-chevron-down"></i><span>n개 더 보기</span></a>
           </li>
         </ul>
         <hr/>
@@ -137,7 +132,6 @@
         </ul>
       </ul>
     </div>
-  
   {% block content %}
   {% endblock %}
   </div>

@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bs: 10px;
+  --lg: 20px;
+  --light_grey: rgba(211, 206, 206, 0.5);
+  --grey: rgba(158, 155, 155, 0.5);
+  --dark_grey: rgba(80, 77, 77, 0.9);
+}
+
 ul li {
   list-style: none;
 }
@@ -16,70 +24,90 @@ a {
 i {
   font-size: large;
   vertical-align: middle;
-}
-
-input {
-  height: 25px;
-  box-sizing: border-box;
+  color: var(--dark_grey);
+  padding: 5px 10px;
 }
 
 button {
-  width: 30px;
-  height: 25px;
-}
-
-.nav_btn {
-  background: none;
   border: none;
-}
-
-header ul li i:hover {
   cursor: pointer;
+  background: none;
 }
 
-#simpleSide ul li:hover, #wideSide ul li:hover {
+#simpleSide ul li:hover,
+#wideSide ul li:hover {
   cursor: pointer;
   background-color: #e0e0e0;
-}
-
-header ul li i:active {
-  border-radius: 50%;
-  background-color: #e0e0e0;
-}
-
-header ul li:nth-of-type(2) a i {
-  color: red;
 }
 
 .wrap {
-  background: rgb(243, 243, 243);
+  /* background: rgb(243, 243, 243); */
   height: 100vh;
 }
 
 /* ---------------header--------------- */
 header {
-  background-color:white;
-  height: 50px;
-  width: 100%;
-  position: fixed;
-  top: 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 15px;
+  margin-top: var(--bs);
+  padding: 0 var(--lg);
+  padding-bottom: var(--bs);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
 }
 
 header ul {
   display: flex;
-  line-height: 50px;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-header > div ul li:active {
-  border-radius: 50%;
-  background-color: #e0e0e0;
+header ul li.logo a {
+  display: inline-block;
+  padding-left: var(--bs);
 }
 
-.login {
+header ul li.logo a i {
+  padding-right: 2px;
+  color: red;
+  font-size: x-large;
+}
+
+header ul li.logo a span {
+  font-weight: bold;
+}
+
+header .search input {
+  font-size: large;
+  border: none;
+  box-shadow: 1px -1px 2px var(--light_grey);
+  border-radius: 5px 0 0 5px;
+  padding-left: var(--bs);
+}
+
+header .search li:first-child {
   display: flex;
+  border: 1px solid var(--grey);
+  border-radius: 3px;
+}
+
+header .search li:first-child button {
+  border-top: 1px solid var(--light_grey);
+  background: var(--light_grey);
+  padding: 0 var(--bs);
+  border-left: 1px solid var(--grey);
+}
+
+header button:active {
+  background: var(--light_grey);
+  border-radius: 60%;
+}
+
+header .search li:first-child button:active {
+  background: var(--grey);
+  border-radius: 0;
 }
 
 /* ---------------simpleSide--------------- */
@@ -87,7 +115,11 @@ header > div ul li:active {
   background-color: white;
   float: left;
   height: 100vh;
-  padding: 0 10px;
+}
+
+#simpleSide ul li {
+  padding: var(--bs);
+  padding-left: var(--lg);
 }
 
 #simpleSide ul li a {
@@ -96,22 +128,35 @@ header > div ul li:active {
   text-align: center;
 }
 
+#simpleSide ul li a span {
+  font-size: small;
+  color: var(--dark_grey);
+}
+
 /* ---------------wideSide--------------- */
 #wideSide {
   background-color: white;
   float: left;
   min-width: 200px;
   height: 100vh;
-  margin-left: 15px;
   overflow-y: hidden;
+}
+
+#wideSide ul li a {
+  display: block;
+  padding: var(--bs) var(--lg);
+}
+
+#wideSide ul li a span {
+  padding-left: var(--bs);
+}
+
+#wideSide ul p {
+  padding-left: 30px;
 }
 
 #wideSide:hover {
   overflow-y: scroll;
-}
-
-#wideSide i {
-  padding-right: 10px;
 }
 
 /* ---------------contents---------------*/
@@ -124,12 +169,13 @@ header > div ul li:active {
   margin-top: 60px;
 }
 
-.contents img, iframe {
+.contents img,
+iframe {
   width: 24%;
   padding: 0.625rem 1%;
 }
 
-@media screen and (min-width: 1320px) { 
+@media screen and (min-width: 1320px) {
   #simpleSide {
     display: none;
   }
@@ -137,10 +183,11 @@ header > div ul li:active {
 
 @media screen and (min-width: 800px) and (max-width: 1320px) {
   #wideSide {
-    display: none
+    display: none;
   }
 
-  .contents img, iframe {
+  .contents img,
+  iframe {
     width: 33%;
     padding: 0.625rem 1%;
   }
@@ -152,10 +199,11 @@ header > div ul li:active {
   }
 
   #wideSide {
-    display: none
+    display: none;
   }
 
-  .contents img, iframe {
+  .contents img,
+  iframe {
     width: 50%;
     padding: 0.625rem 1%;
   }
