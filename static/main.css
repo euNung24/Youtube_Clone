@@ -41,7 +41,7 @@ button {
 }
 
 .wrap {
-  /* background: rgb(243, 243, 243); */
+  background-color: var(--light_grey);
   height: 100vh;
 }
 
@@ -49,13 +49,12 @@ button {
 header {
   display: flex;
   justify-content: space-between;
-  margin-top: var(--bs);
-  padding: 0 var(--lg);
-  padding-bottom: var(--bs);
+  padding: var(--bs) var(--lg);
   position: fixed;
   top: 0;
   width: 100%;
   background: #fff;
+  border-bottom: 1px solid var(--grey);
 }
 
 header ul {
@@ -79,18 +78,26 @@ header ul li.logo a span {
   font-weight: bold;
 }
 
-header .search input {
-  font-size: large;
-  border: none;
-  box-shadow: 1px -1px 2px var(--light_grey);
-  border-radius: 5px 0 0 5px;
-  padding-left: var(--bs);
+header .search {
+  flex-grow: 0.6;
+  flex-shrink: 1;
 }
 
 header .search li:first-child {
   display: flex;
   border: 1px solid var(--grey);
   border-radius: 3px;
+  width: 100%;
+  flex: 1 0;
+}
+
+header .search input {
+  font-size: large;
+  border: none;
+  box-shadow: 1px -1px 2px var(--light_grey);
+  border-radius: 5px 0 0 5px;
+  padding-left: var(--bs);
+  width: 100%;
 }
 
 header .search li:first-child button {
@@ -112,14 +119,21 @@ header .search li:first-child button:active {
 
 /* ---------------simpleSide--------------- */
 #simpleSide {
-  background-color: white;
-  float: left;
+  background-color: #fff;
   height: 100vh;
+  position: fixed;
+  left: 0;
+  display: none;
+  float: left;
+  padding-top: 5px;
+}
+
+#simpleSide.open {
+  display: block;
 }
 
 #simpleSide ul li {
-  padding: var(--bs);
-  padding-left: var(--lg);
+  padding: var(--bs) var(--lg);
 }
 
 #simpleSide ul li a {
@@ -135,11 +149,18 @@ header .search li:first-child button:active {
 
 /* ---------------wideSide--------------- */
 #wideSide {
-  background-color: white;
-  float: left;
-  min-width: 200px;
-  height: 100vh;
+  display: none;
+  background-color: #fff;
   overflow-y: hidden;
+  position: fixed;
+  left: 0;
+  float: left;
+  padding-top: 5px;
+  height: calc(100% - 50px);
+}
+
+#wideSide.open {
+  display: block;
 }
 
 #wideSide ul li a {
@@ -151,7 +172,7 @@ header .search li:first-child button:active {
   padding-left: var(--bs);
 }
 
-#wideSide ul p {
+#wideSide p {
   padding-left: 30px;
 }
 
@@ -162,20 +183,24 @@ header .search li:first-child button:active {
 /* ---------------contents---------------*/
 
 .contents {
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 60px;
+  justify-content: space-between;
+  margin-left: 80px;
+  margin-top: 50px;
+}
+
+.contents.open {
+  margin-left: 210px;
 }
 
 .contents img,
-iframe {
-  width: 24%;
-  padding: 0.625rem 1%;
+.contents iframe {
+  margin: var(--bs);
+  flex: 1 2 40px;
 }
 
-@media screen and (min-width: 1320px) {
+/* @media screen and (min-width: 1320px) {
   #simpleSide {
     display: none;
   }
@@ -217,4 +242,4 @@ input {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-}
+} */
