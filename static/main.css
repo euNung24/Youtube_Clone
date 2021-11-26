@@ -238,6 +238,9 @@ header .search li:first-child button:active {
   #simpleSide.open {
     display: none;
   }
+  .contents {
+    margin: 0;
+  }
 }
 
 @media screen and (min-width: 749px) and (max-width: 1024px) {
