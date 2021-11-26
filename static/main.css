@@ -198,6 +198,7 @@ header .search li:first-child button:active {
   padding-top: 55px;
   overflow: scroll;
   margin: var(--lg);
+  margin-right: 0;
 }
 
 .contents img,
