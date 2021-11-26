@@ -16,7 +16,7 @@
   var player;
   function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
-          videoId: '{{ video.video_key }}'
+          videoId: '{{ video.get_only_key }}'
       });
   }
 </script>

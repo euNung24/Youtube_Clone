@@ -42,7 +42,7 @@
         </li>
         <li>
           {% if user.is_authenticated %}
-          <a href="{% url 'common:logout' %}"><img src="{% static '1.PNG' %}" alt="" id="login"><span>로그아웃</span></a>
+          <a href="{% url 'common:logout' %}" id="logout"><img src="{% static '1.PNG' %}" alt=""><span>로그아웃</span></a>
           {% else %}
           <a href="{% url 'common:login' %}"><i class="fas fa-user-circle fs-4"></i><span>로그인</span></a>
           {% endif %}
