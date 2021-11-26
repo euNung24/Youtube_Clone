@@ -179,6 +179,7 @@ header .search li:first-child button:active {
 
 #wideSide ul li a span {
   padding-left: var(--bs);
+  vertical-align: middle;
 }
 
 #wideSide p {
