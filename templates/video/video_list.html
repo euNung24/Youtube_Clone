@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="contents">
-    <div class="page-header" style="overflow: auto;">
-        <h1 style="display: inline;">Video List</h1>
-        <a class="btn btn-default" href="/video/new" style="float: right;">New Video</a>
+<div class="contents list">
+  <div class="page-header" style="overflow: auto;">
+    <h1>Video List</h1>
+    <a class="btn btn-default" href="/video/new">New Video</a>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {% for video in video_list %}
+        <a href="/video/{{ video.id }}">
+          <h4>{{ video.title }}</h4>
+        </a>
+      {% endfor %}
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            {% for video in video_list %}
-                <a href="/video/{{ video.id }}">
-                    <h4>{{ video.title }}</h4>
-                </a>
-            {% endfor %}
-        </div>
-    </div>
+  </div>
 </div>
 {% endblock %}
